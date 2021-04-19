@@ -1,4 +1,5 @@
 #include "../include/cnpython.h"
+#include "../include/util.h"
 
 int main(int argc, char *argv[]){
     //HEART
@@ -9,7 +10,8 @@ int main(int argc, char *argv[]){
 
     //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
     if(strcmp(argv[1], "compile") is 0){
-        printf("Hey it works\n");
+        char *source = read_ascii_file(argv[2]);
+        printf("%s", source);
     }
 
     return 0;
