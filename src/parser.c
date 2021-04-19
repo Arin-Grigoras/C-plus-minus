@@ -1,5 +1,6 @@
 #include "../include/parser.h"
 #include "../include/cnpython.h"
+#include "../include/errors.h"
 
 
 
@@ -32,8 +33,14 @@ ParserStatus parser_start(TokenList* list, const char* source){
                 //printf("INST: %s\n", lex);
                 token_list_add(list, token_create(INST, inst, line));
             }
+
+            //Tried to make it so if it's just an empty character it ignores it
+            /*elif(lex is NULL){
+                continue;
+            }*/
+
             else{
-                printf("Syntax error: no such instruction '%s'\n", lex);
+                error(SyntaxError, lex);
                 return PARSER_SYNTAX_ERROR;
             }
         }
@@ -57,7 +64,13 @@ ParserStatus parser_start(TokenList* list, const char* source){
 
 uint32_t parser_get_number(const char* buf){
     long num = atoi(&buf[1]);
-    return (num <= UINT32_MAX) ? num : 0;
+
+    if(num > UINT32_MAX){
+        error(OverFlowError, NULL);
+        return OverFlowError;
+    }
+
+    return num;
 }
 
 
