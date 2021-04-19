@@ -1,6 +1,6 @@
 #include "../include/parser.h"
-#define true 1
-#define false 0
+#include "../include/cnpython.h"
+
 
 
 ParserStatus parser_start(TokenList* list, const char* source){
@@ -9,17 +9,17 @@ ParserStatus parser_start(TokenList* list, const char* source){
     int i = 0;
     int line = 1;
     
-    while(true){
+    while(True){
         //memset(lex, '\0', 256);
 
-        while(source[i] != ' ' && source[i] != '\n' && source[i] != '\0'){
+        while(source[i] isnt ' ' and source[i] isnt '\n' and source[i] isnt '\0' and source[i] isnt '\t' and source[i] isnt '\r' and source[i] isnt '\v' and source[i] isnt '\f'){
             lex[lexi++] = source[i++];
         }
         
         lex[lexi] = '\0';
 
 
-        if(lex[0] == '#'){
+        if(lex[0] is '#'){
             int num = parser_get_number(lex);
             //printf("NUMBER: %d\n", num);
             token_list_add(list, token_create(NUMBER, num, line));
@@ -38,10 +38,10 @@ ParserStatus parser_start(TokenList* list, const char* source){
             }
         }
 
-        if(source[i] == '\n'){
+        if(source[i] is '\n'){
             line++;
         }
-        else if(source[i] == '\0'){
+        else if(source[i] is '\0'){
             break;
         }
 
@@ -62,13 +62,13 @@ uint32_t parser_get_number(const char* buf){
 
 
 TokenInst parser_get_inst(const char* buf){
-    if(strcmp(buf, "add") == 0){
+    if(strcmp(buf, "push") is 0){
         return push;
     }
-    if(strcmp(buf, "sum") == 0){
+    if(strcmp(buf, "add") is 0){
         return add;
     }
-    if(strcmp(buf, "hlt") == 0){
+    if(strcmp(buf, "hlt") is 0){
         return hlt;
     }
     else{
