@@ -24,6 +24,7 @@
 #include "./util.h"
 #include "./compiler.h"
 #include "./cnpython.h"
+#include "./colors.h"
 
 #ifndef not
     #error "C+-.h Requires not to be defined in cnpython.h"
