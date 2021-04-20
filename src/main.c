@@ -8,18 +8,18 @@
 #include "../include/util.h"
 #include "../include/parser.h"
 #include "../include/token.h"
-#include "../include/compiler.h"
+#include "../include/transpiler.h"
 
 
 int main(int argc, char *argv[]){
     //HEART
     if(argc<3){
-        printf("Too few arguments\n");
-        return 1;
+        //We want to transpile and run the program all in one
     }
 
     //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
-    if(strcmp(argv[1], "compile") is 0){
+    //we want to only transpile the program into its C++ form
+    if(strcmp(argv[1], "transpile") is 0){
         char* source = read_ascii_file(argv[2]);
         TokenList tokens;
         token_list_create(&tokens, 1);
@@ -28,9 +28,9 @@ int main(int argc, char *argv[]){
             return 1;
         }
 
-        CompilerStatus cstat = compiler_start(&tokens);
+        TranspilerStatus cstat = transpiler_start(&tokens);
         
-        if(cstat isnt COMPILER_SUCCES){
+        if(cstat isnt TRANSPILER_SUCCES){
             return 1;
         }
 
