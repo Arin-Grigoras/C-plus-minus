@@ -14,4 +14,4 @@ A personal project trying to be a programming language with close resemblence to
   But for now I want it to be able at least to be close to assembly so it can actually do stuff.
 
 ## Technologies
- For now it is being built with C but I want to change that in the near future so it uses C++
+ For now it is being built with C.
