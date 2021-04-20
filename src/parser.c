@@ -81,8 +81,8 @@ TokenInst parser_get_inst(const char* buf){
     if(strcmp(buf, "add") is 0){
         return add;
     }
-    if(strcmp(buf, "hlt") is 0){
-        return hlt;
+    if(strcmp(buf, "ext") is 0){
+        return ext;
     }
     else{
         return (TokenInst)-1;

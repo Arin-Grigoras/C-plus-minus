@@ -7,13 +7,14 @@ enum _TokenType{
     INST,
     OP,
     TYPE,
+    COMMENT,
     NUMBER
 };
 
 enum _TokenInst{
     push,
     add,
-    hlt
+    ext
 };
 
 typedef enum _TokenInst TokenInst;

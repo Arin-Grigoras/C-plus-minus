@@ -28,7 +28,7 @@
 
 #define True 1
 #define False 0
-#define None ((void*)0) //basically NULL
+#define None 0 //basically NULL
 
 
 //Really bad class definition but howdy, it works
