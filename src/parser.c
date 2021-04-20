@@ -65,12 +65,14 @@ ParserStatus parser_start(TokenList* list, const char* source){
 uint32_t parser_get_number(const char* buf){
     long num = atoi(&buf[1]);
 
-    if(num > UINT32_MAX){
-        error(OverFlowError, NULL);
-        return OverFlowError;
+    //printf("%ld", num);
+
+    if(num < UINT32_MAX){
+        return num;
     }
 
-    return num;
+    error(OverFlowError, NULL);
+    return OverFlowError;
 }
 
 
