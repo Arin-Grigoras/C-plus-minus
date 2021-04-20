@@ -1,5 +1,7 @@
 # C-star
 
+![alt text](https://github.com/koreaneggroll/C-star/blob/main/logo.jpeg?raw=true)
+
 A personal project trying to be a programming language with close resemblence to C/C++ (probably gonna fail at that).
 
 ## What I want the programming language to  be
