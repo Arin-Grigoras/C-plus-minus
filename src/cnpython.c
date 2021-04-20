@@ -57,7 +57,7 @@ void raise_exception(int except, char *file, int line){
 
 long long bin(long decimal){
         long long bin = 0;
-        int rem, i = 1, step = 1;
+        long rem, i = 1, step = 1;
         while (decimal != 0) {
                 rem = decimal % 2;
                 decimal /= 2;
