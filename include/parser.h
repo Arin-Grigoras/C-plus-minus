@@ -1,12 +1,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <limits.h>
-
+#include "./C+-.h"
 #include "./token.h"
 
 

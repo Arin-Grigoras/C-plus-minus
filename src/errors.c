@@ -1,5 +1,4 @@
-#include "../include/errors.h"
-#include "../include/cnpython.h"
+#include "../include/C+-.h"
 
 void error(const int error_code, char *lex){
    if(error_code is SyntaxError){

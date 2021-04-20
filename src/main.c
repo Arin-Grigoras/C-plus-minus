@@ -4,11 +4,7 @@
     under certain conditions; type `show c' for details.
 */
 
-#include "../include/cnpython.h"
-#include "../include/util.h"
-#include "../include/parser.h"
-#include "../include/token.h"
-#include "../include/compiler.h"
+#include "../include/C+-.h"
 
 
 int main(int argc, char *argv[]){
@@ -19,7 +15,7 @@ int main(int argc, char *argv[]){
 
     //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
     //we want to only transpile the program into its C++ form
-    if(strcmp(argv[1], "transpile") is 0){
+    if(strcmp(argv[1], "compile") is 0){
         char* source = read_ascii_file(argv[2]);
         TokenList tokens;
         token_list_create(&tokens, 1);

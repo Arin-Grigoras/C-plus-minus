@@ -2,8 +2,7 @@
 #define BYTEBUFFER_H
 
 
-#include <stdint.h>
-#include <stdlib.h>
+#include "./C+-.h"
 
 struct _ByteBuffer {
     uint8_t* buffer;

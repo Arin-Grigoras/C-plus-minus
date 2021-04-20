@@ -1,6 +1,5 @@
-#include "../include/compiler.h"
-#include "../include/cnpython.h"
+#include "../include/C+-.h"
 
 CompilerStatus compiler_start(TokenList *list){
-    
+    printf("Hello world");
 }

@@ -1,6 +1,4 @@
-#include "../include/parser.h"
-#include "../include/cnpython.h"
-#include "../include/errors.h"
+#include "../include/C+-.h"
 
 
 

@@ -1,8 +1,7 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "./C+-.h"
 
 char *read_ascii_file(const char* path);
 

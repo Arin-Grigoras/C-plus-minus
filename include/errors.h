@@ -1,6 +1,8 @@
 #ifndef ERRORS_H
 #define ERRORS_H
 
+#include "./C+-.h"
+
 //errors & warningsthat can happen in the program
 
 enum _Errors{

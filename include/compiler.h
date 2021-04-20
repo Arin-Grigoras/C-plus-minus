@@ -1,6 +1,7 @@
 #ifndef COMPILER_H
 #define COMPILER_H
 
+#include "./C+-.h"
 #include "./token.h"
 
 enum _CompilerStatus {
