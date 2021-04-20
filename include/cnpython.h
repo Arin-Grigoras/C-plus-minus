@@ -132,7 +132,6 @@ enum types{
 #define AllocationError 1
 #define ReallocationError 2
 #define MemoryError 3
-#define ZeroDivisionError 4
 #define FileOpenError 5
 
 
