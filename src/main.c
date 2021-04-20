@@ -8,7 +8,7 @@
 #include "../include/util.h"
 #include "../include/parser.h"
 #include "../include/token.h"
-#include "../include/transpiler.h"
+#include "../include/compiler.h"
 
 
 int main(int argc, char *argv[]){
@@ -28,9 +28,9 @@ int main(int argc, char *argv[]){
             return 1;
         }
 
-        TranspilerStatus cstat = transpiler_start(&tokens);
+        CompilerStatus cstat = compiler_start(&tokens);
         
-        if(cstat isnt TRANSPILER_SUCCES){
+        if(cstat isnt COMPILER_SUCCES){
             return 1;
         }
 
