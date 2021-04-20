@@ -6,6 +6,7 @@
 enum _TokenType{
     INST,
     OP,
+    TYPE,
     NUMBER
 };
 
@@ -22,6 +23,18 @@ typedef enum _TokenInst TokenInst;
 };
 Tried but failed :(
 */
+
+enum _TokenType{
+    inte,
+    chr,
+    string,
+    lng,
+    dbl,
+    flt,
+};
+
+typedef enum _TokenType TokenType;
+
 
 struct _Token{
     int data;
