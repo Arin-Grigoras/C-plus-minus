@@ -10,7 +10,8 @@
 int main(int argc, char *argv[]){
     //HEART
     if(argc<3){
-        //We want to transpile and run the program all in one
+        printf("Too few arguments\n");
+        return 1;
     }
 
     //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
