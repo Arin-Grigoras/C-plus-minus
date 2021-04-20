@@ -14,7 +14,12 @@
 #define IncludeError 4
 #define MemoryOverload 5
 #define RunTimeError 6
-#define ZeroDivisionError 7
+
+#ifdef ZeroDivisionError
+    #undef ZeroDivisionError
+    #define ZeroDivisionError 7
+#endif
+
 #define FileNotExist 8
 #define TypeError 9
 

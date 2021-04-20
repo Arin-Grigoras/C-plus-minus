@@ -24,7 +24,7 @@ typedef enum _TokenInst TokenInst;
 Tried but failed :(
 */
 
-enum _TokenType{
+enum _TokenTypes{
     inte,
     chr,
     string,
@@ -33,7 +33,7 @@ enum _TokenType{
     flt,
 };
 
-typedef enum _TokenType TokenType;
+typedef enum _TokenTypes TokenTypes;
 
 
 struct _Token{

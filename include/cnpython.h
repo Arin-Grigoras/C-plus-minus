@@ -132,6 +132,7 @@ enum types{
 #define AllocationError 1
 #define ReallocationError 2
 #define MemoryError 3
+#define ZeroDivisionError 4
 #define FileOpenError 5
 
 
@@ -308,7 +309,7 @@ char **split(char **array, char *str, const char *del);
 
 
 /* Returns the char for the ASCII code */
-char chr(int ascii);
+//char chr(int ascii);
 
 /* Returns the ASCII code for the char */
 int ord(char c);

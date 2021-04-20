@@ -8,9 +8,18 @@
 
 
 int main(int argc, char *argv[]){
+
+    if(strcmp(argv[1], "-h") is 0){
+        printf("C+-  Copyright (C) 2021  Arin Grigoras\nThis program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\nThis is free software, and you are welcome to redistribute it");
+        printf("\n\nAn example to compile programs: \ncpm compile ./folder_to_file/file.cpm\n");
+
+        return 0;
+    }
+
     //HEART
     if(argc<3){
         printf("Too few arguments\n");
+        printf("Maybe try -h to get some help\n");
         return 1;
     }
 
