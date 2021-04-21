@@ -41,7 +41,7 @@ enum _TokenTypes{
 typedef enum _TokenTypes TokenTypes;
 
 
-#define comment 10
+//#define comment 10
 
 
 struct _Token{

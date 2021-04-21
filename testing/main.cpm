@@ -1,4 +1,5 @@
 push #2000
 push #2
 add
+@this is a comment
 ext

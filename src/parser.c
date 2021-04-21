@@ -28,7 +28,16 @@ ParserStatus parser_start(TokenList* list, const char* source){
         elif(lex[0] is '+' or lex[0] is '-' or lex[0] is '*' or lex[0] is '/' or lex[0] is '%'){
             //then do some operator stuff(i literally have no idea what im doing please help)
             int op = parser_get_op(lex);
+            //printf("%d\n", op);
             token_list_add(list, token_create(OP, op, line));
+        }
+
+        elif(lex[0] is '@'){
+            /*for(int i = 0; lex[i] != "\n"; i++){
+                int com = parser_get_com(lex);
+            }*/
+
+            //here im trying to implement a comment
         }
         
         else{
@@ -113,4 +122,9 @@ int parser_get_op(const char *buf){
         return modulus;
     }
 
+}
+
+
+int parser_get_com(const char *buf){
+    return COMMENT;
 }
