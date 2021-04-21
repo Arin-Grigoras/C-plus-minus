@@ -14,6 +14,7 @@ enum _TokenType{
 enum _TokenInst{
     push,
     add,
+    ret,
     ext
 };
 
