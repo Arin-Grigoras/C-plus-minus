@@ -46,4 +46,4 @@ A personal project trying to be a programming language with close resemblence to
 
 
 ## Technologies
- For now it is being built with C.
+ For now it is being built with C and my own C library called CnPython [https://github.com/koreaneggroll/CnPython]
