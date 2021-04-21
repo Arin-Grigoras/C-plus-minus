@@ -16,8 +16,7 @@
     #error "C+-.h Requires UINT32_MAX to be defined"
 #endif
 
-#include "./bytebuffer.h"
-#include "./bytecode.h"
+
 #include "./errors.h"
 #include "./parser.h"
 #include "./token.h"

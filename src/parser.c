@@ -23,8 +23,14 @@ ParserStatus parser_start(TokenList* list, const char* source){
             //printf("NUMBER: %d\n", num);
             token_list_add(list, token_create(NUMBER, num, line));
         }
+
+        //if its an operator
+        elif(lex[0] is '+' or lex[0] is '-' or lex[0] is '*' or lex[0] is '/' or lex[0] is '%'){
+            //then do some operator stuff(i literally have no idea what im doing please help)
+            int op = parser_get_op(lex);
+            token_list_add(list, token_create(OP, op, line));
+        }
         
-        //If it isn't a number it is an instruction
         else{
             int inst = parser_get_inst(lex);
             if(inst >= 0){
@@ -87,4 +93,24 @@ TokenInst parser_get_inst(const char* buf){
     else{
         return (TokenInst)-1;
     }
+}
+
+
+int parser_get_op(const char *buf){
+    if(strcmp(buf, "+") is 0){
+        return plus;
+    }
+    elif(strcmp(buf, "-") is 0){
+        return minus;
+    }
+    elif(strcmp(buf, "*") is 0){
+        return multiply;
+    }
+    elif(strcmp(buf, "/") is 0){
+        return divide;
+    }
+    elif(strcmp(buf, "%") is 0){
+        return modulus;
+    }
+
 }

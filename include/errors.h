@@ -22,10 +22,10 @@
 
 #define FileNotExist 8
 #define TypeError 9
-
+#define IllegalExpression 10
 
 //WARNINGS
-#define WhiteSpaceWarning 10
+#define WhiteSpaceWarning 11
 
 
 void error(const int error_code, char *lex);

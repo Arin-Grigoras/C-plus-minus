@@ -6,6 +6,7 @@
 
 enum _CompilerStatus {
     COMPILER_SUCCES,
+    COMPILER_FAILURE,
 };
 typedef enum _CompilerStatus CompilerStatus;
 

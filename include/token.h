@@ -19,11 +19,15 @@ enum _TokenInst{
 
 typedef enum _TokenInst TokenInst;
 
-/*enum _TokenOP{
-
+enum _TokenOP{
+    plus,
+    minus,
+    multiply,
+    divide,
+    modulus,
 };
-Tried but failed :(
-*/
+typedef enum _TokenOP TokenOP;
+
 
 enum _TokenTypes{
     inte,
@@ -35,6 +39,9 @@ enum _TokenTypes{
 };
 
 typedef enum _TokenTypes TokenTypes;
+
+
+#define comment 10
 
 
 struct _Token{
