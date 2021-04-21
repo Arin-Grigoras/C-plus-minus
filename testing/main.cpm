@@ -1,5 +1,4 @@
 push #2000
-@this is probably gonna stop the flow of the program
 push #2
 add
 ext
