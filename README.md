@@ -4,6 +4,9 @@
 
 A personal project trying to be a programming language with close resemblence to C/C++ (probably gonna fail at that).
 
+## Side note
+ This project will probably get some commits in one day and then none for another day. That's because i'm also working on my other project *teamlearn* https://github.com/teamlearncoding/teamlearn.
+
 ## What I want the programming language to  be
  I want it to be:
 
