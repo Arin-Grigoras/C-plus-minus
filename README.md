@@ -42,7 +42,20 @@ A personal project trying to be a programming language with close resemblence to
     ./cpm compile ./testing/main.cpm
 
 
-    If the output is "Hello world"(this is only for now until I learn about compilers and start working on it) then it works fine. You can start contributing to either the syntax, the compiler or anything you'd like.
+  If the output is:
+    0 push
+1 number
+0 push
+0 number
+1 add
+2 ext
+
+
+Done...
+
+
+Run ./testing/main.o to run the program
+
 
 
 ## Technologies
