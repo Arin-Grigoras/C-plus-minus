@@ -15,6 +15,7 @@ char* check_instruction(const int inst_code, const int type, const int line);
 int check_push(const int inst_code, const int type, const int line);
 int check_add(const int inst_code, const int type, const int line);
 int check_ext(const int inst_code, const int type, const int line);
+int check_num(const int inst_code, const int type, const int line);
 CompilerStatus compiler_start(TokenList *list, const char *path);
 
 

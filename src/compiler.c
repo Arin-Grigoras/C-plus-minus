@@ -23,6 +23,14 @@ int check_ext(const int inst_code, const int type, const int line){
 }
 
 
+int check_num(const int inst_code, const int type, const int line){
+    if(type == 4){
+        return NUMBER;
+    }
+    return -1;
+}
+
+
 char* get_instruction(const int inst_code, const int type, const int line){
     if(check_push(inst_code, type, line) == push){
         return "push";
@@ -34,8 +42,12 @@ char* get_instruction(const int inst_code, const int type, const int line){
         return "ext";
     }
 
-    else{
+    else if(check_num(inst_code, type, line) == NUMBER){
         return "number";
+    }
+
+    else{
+        return "unknown";
     }
 
 }
@@ -51,7 +63,7 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
     for(uint32_t i = 0; i < list->ptr; i++){
             Token* t = token_list_get(*&list, i);
             
-            printf("%d %s\n", t->data, get_instruction(t->data, t->type, t->line));
+            printf("%d %s %d\n", t->data, get_instruction(t->data, t->type, t->line), t->line);
             //printf("\n");
             
     }
