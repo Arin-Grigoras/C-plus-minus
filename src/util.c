@@ -4,7 +4,7 @@ char *read_ascii_file(const char *path){
     FILE *fptr;
     fptr = fopen(path, "r");
 
-    if(not fptr){
+    if(!fptr){
         printf("Couldn't open file %s", path);
     }
 
@@ -14,7 +14,7 @@ char *read_ascii_file(const char *path){
 
     char *buffer = (char*)malloc(sizeof(char) * (size + 1));
 
-    if(not buffer){
+    if(!buffer){
         printf("Couldn't allocate memory %d", __LINE__);
         return NULL;
     }

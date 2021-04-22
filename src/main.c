@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[]){
 
-    if(strcmp(argv[1], "-h") is 0){
+    if(strcmp(argv[1], "-h") == 0){
         printf("C+-  Copyright (C) 2021  Arin Grigoras\nThis program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\nThis is free software, and you are welcome to redistribute it");
         printf("\n\nAn example to compile programs: \ncpm compile ./folder_to_file/file.cpm\n");
 
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
 
     //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
     //we want to only transpile the program into its C++ form
-    if(strcmp(argv[1], "compile") is 0){
+    if(strcmp(argv[1], "compile") == 0){
 
         clock_t begin = clock();
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
         TokenList tokens;
         token_list_create(&tokens, 1);
         ParserStatus pstat = parser_start(&tokens, source);
-        if(pstat isnt PARSER_SUCCES){
+        if(pstat != PARSER_SUCCES){
             return 1;
         }
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]){
 
         CompilerStatus cstat = compiler_start(&tokens, argv[3]);
         
-        if(cstat isnt COMPILER_SUCCES){
+        if(cstat != COMPILER_SUCCES){
             return 1;
         }
 

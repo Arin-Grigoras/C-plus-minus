@@ -27,10 +27,10 @@ char* get_instruction(const int inst_code, const int type, const int line){
     if(check_push(inst_code, type, line) == push){
         return "push";
     }
-    elif(check_add(inst_code, type, line) == add){
+    else if(check_add(inst_code, type, line) == add){
         return "add";
     }
-    elif(check_ext(inst_code, type, line) == ext){
+    else if(check_ext(inst_code, type, line) == ext){
         return "ext";
     }
 
@@ -43,7 +43,7 @@ char* get_instruction(const int inst_code, const int type, const int line){
 CompilerStatus compiler_start(TokenList *list, const char *path){
     FILE *fptr = fopen(path, "wb");
 
-    if(not fptr){
+    if(!fptr){
         printf("\nFileOpenError: 'a.out'\n");
         return FileOpenError;
     }

@@ -8,31 +8,31 @@ ParserStatus parser_start(TokenList* list, const char* source){
     int i = 0;
     int line = 1;
     
-    while(True){
+    while(true){
         //memset(lex, '\0', 256);
 
-        while(source[i] isnt ' ' and source[i] isnt '\n' and source[i] isnt '\0' and source[i] isnt '\t' and source[i] isnt '\r' and source[i] isnt '\v' and source[i] isnt '\f'){
+        while(source[i] != ' ' && source[i] != '\n' && source[i] != '\0' && source[i] != '\t' && source[i] != '\r' && source[i] != '\v' && source[i] != '\f'){
             lex[lexi++] = source[i++];
         }
         
         lex[lexi] = '\0';
 
 
-        if(lex[0] is '#'){
+        if(lex[0] == '#'){
             int num = parser_get_number(lex, line);
             //printf("NUMBER: %d\n", num);
             token_list_add(list, token_create(NUMBER, num, line));
         }
 
         //if its an operator
-        elif(lex[0] is '+' or lex[0] is '-' or lex[0] is '*' or lex[0] is '/' or lex[0] is '%'){
+        else if(lex[0] == '+' || lex[0] == '-' || lex[0] == '*' || lex[0] == '/' || lex[0] == '%'){
             //then do some operator stuff(i literally have no idea what im doing please help)
             int op = parser_get_op(lex);
             //printf("%d\n", op);
             token_list_add(list, token_create(OP, op, line));
         }
 
-        elif(lex[0] is '@'){
+        else if(lex[0] == '@'){
             /*for(int i = 0; lex[i] != "\n"; i++){
                 int com = parser_get_com(lex);
             }*/
@@ -48,7 +48,7 @@ ParserStatus parser_start(TokenList* list, const char* source){
             }
 
             //Tried to make it so if it's just an empty character it ignores it
-            /*elif(lex is NULL){
+            /*else if(lex is NULL){
                 continue;
             }*/
 
@@ -58,10 +58,10 @@ ParserStatus parser_start(TokenList* list, const char* source){
             }
         }
 
-        if(source[i] is '\n'){
+        if(source[i] == '\n'){
             line++;
         }
-        else if(source[i] is '\0'){
+        else if(source[i] == '\0'){
             break;
         }
 
@@ -90,13 +90,13 @@ uint32_t parser_get_number(const char* buf, const int line){
 
 
 TokenInst parser_get_inst(const char* buf){
-    if(strcmp(buf, "push") is 0){
+    if(strcmp(buf, "push") == 0){
         return push;
     }
-    if(strcmp(buf, "add") is 0){
+    if(strcmp(buf, "add") == 0){
         return add;
     }
-    if(strcmp(buf, "ext") is 0){
+    if(strcmp(buf, "ext") == 0){
         return ext;
     }
     else{
@@ -106,19 +106,19 @@ TokenInst parser_get_inst(const char* buf){
 
 
 int parser_get_op(const char *buf){
-    if(strcmp(buf, "+") is 0){
+    if(strcmp(buf, "+") == 0){
         return plus;
     }
-    elif(strcmp(buf, "-") is 0){
+    else if(strcmp(buf, "-") == 0){
         return minus;
     }
-    elif(strcmp(buf, "*") is 0){
+    else if(strcmp(buf, "*") == 0){
         return multiply;
     }
-    elif(strcmp(buf, "/") is 0){
+    else if(strcmp(buf, "/") == 0){
         return divide;
     }
-    elif(strcmp(buf, "%") is 0){
+    else if(strcmp(buf, "%") == 0){
         return modulus;
     }
 

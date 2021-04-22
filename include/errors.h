@@ -14,19 +14,11 @@
 #define IncludeError 4
 #define MemoryOverload 5
 #define RunTimeError 6
-
-#ifdef ZeroDivisionError
-    #undef ZeroDivisionError
-    #define ZeroDivisionError 7
-#endif
-
+#define ZeroDivisionError 7
 #define FileNotExist 8
 #define TypeError 9
 #define IllegalExpression 10
-#ifdef FileOpenError
-    #undef FileOpenError
-    #define FileOpenerror 11
-#endif
+#define FileOpenError 11
 
 //WARNINGS
 #define WhiteSpaceWarning 12

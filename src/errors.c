@@ -1,50 +1,50 @@
 #include "../include/C+-.h"
 
 void error(const int error_code, char *lex, const int line){
-    if(error_code is SyntaxError){
+    if(error_code == SyntaxError){
        printf("%sSyntax error: %sno such instruction '%s' at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is OverFlowError){
+    else if(error_code == OverFlowError){
        printf("%sOverFlow error: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is WhiteSpaceWarning){
+    else if(error_code == WhiteSpaceWarning){
        printf("%sWhiteSpaceWarning: %s%s at line: %d\n", purple(), white(), lex, line);
     }
 
-    elif(error_code is ArithmeticError){
+    else if(error_code == ArithmeticError){
         printf("%sArithmetic Error: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is FloatingPointError){
+    else if(error_code == FloatingPointError){
         printf("%sFloating Point Error: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is IncludeError){
+    else if(error_code == IncludeError){
         printf("%sInclude Error: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is MemoryOverload){
+    else if(error_code == MemoryOverload){
         printf("%sMemory Overload: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is RunTimeError){
+    else if(error_code == RunTimeError){
         printf("%sRunTimeError: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is ZeroDivisionError){
+    else if(error_code == ZeroDivisionError){
         printf("%sZeroDivisionError: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is FileNotExist){
+    else if(error_code == FileNotExist){
         printf("%sFileNotExist: %s%s at line: %d\n", red(), white(), lex, line);
     }
 
-    elif(error_code is TypeError){
+    else if(error_code == TypeError){
         printf("%sTypeError: %s%s at line: %d\n", red(), white(), lex, line);
     }
-    elif(error_code is FileOpenError){
+    else if(error_code == FileOpenError){
         printf("%sFileOpenError: %s%s at line %d\n", red(), white(), lex, line);
     }
     else{
