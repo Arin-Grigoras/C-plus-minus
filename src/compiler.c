@@ -24,13 +24,13 @@ int check_ext(const int inst_code, const int line){
 
 
 char* get_instruction(const int inst_code, const int line){
-    if(check_push(inst_code, line)){
+    if(check_push(inst_code, line) == push){
         return "push";
     }
-    elif(check_add(inst_code, line)){
+    elif(check_add(inst_code, line) == add){
         return "add";
     }
-    elif(check_ext(inst_code, line)){
+    elif(check_ext(inst_code, line) == ext){
         return "ext";
     }
 
