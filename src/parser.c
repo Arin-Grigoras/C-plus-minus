@@ -19,7 +19,7 @@ ParserStatus parser_start(TokenList* list, const char* source){
 
 
         if(lex[0] is '#'){
-            int num = parser_get_number(lex);
+            int num = parser_get_number(lex, line);
             //printf("NUMBER: %d\n", num);
             token_list_add(list, token_create(NUMBER, num, line));
         }
@@ -53,7 +53,7 @@ ParserStatus parser_start(TokenList* list, const char* source){
             }*/
 
             else{
-                error(SyntaxError, lex);
+                error(SyntaxError, lex, line);
                 return PARSER_SYNTAX_ERROR;
             }
         }
@@ -75,7 +75,7 @@ ParserStatus parser_start(TokenList* list, const char* source){
 }
 
 
-uint32_t parser_get_number(const char* buf){
+uint32_t parser_get_number(const char* buf, const int line){
     long num = atoi(&buf[1]);
 
     //printf("%ld", num);
@@ -84,7 +84,7 @@ uint32_t parser_get_number(const char* buf){
         return num;
     }
 
-    error(OverFlowError, NULL);
+    error(OverFlowError, NULL, line);
     return OverFlowError;
 }
 

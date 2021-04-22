@@ -32,7 +32,7 @@
 #define WhiteSpaceWarning 12
 
 
-void error(const int error_code, char *lex);
+void error(const int error_code, char *lex, const int line);
 
 
 #endif //ERRORS_H
