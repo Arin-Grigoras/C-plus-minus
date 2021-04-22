@@ -1,18 +1,18 @@
-# Documentation for C*
+# Documentation for C+-
 
 ## Get Started : how to install the transpiler
-  The transpiler can be obtained by either getting the latest release of it. Or by running the following commands
+  The compiler can be obtained by either getting the latest release of it on the github page. Or by running the following commands
     
 
-     git clone https://github.com/koreaneggroll/C-star.git
-     cd C-star
+     git clone https://github.com/koreaneggroll/C-Plus-Minus.git
+     cd C-Plus-Minus
      make
 
 
   And now to access the transpiler globally:
      
 
-     sudo cp ./gss /usr/local/bin
+     sudo cp ./cpm /usr/local/bin
 
 
   And now you can use it freely on any file you want.
