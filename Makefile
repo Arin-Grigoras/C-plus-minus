@@ -19,3 +19,4 @@ ${EXEC}: ${OBJ}
 
 clean:
 	rm src/*.o ${EXEC}
+	rm testing/*.o

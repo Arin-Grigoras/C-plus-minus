@@ -26,6 +26,9 @@ int main(int argc, char *argv[]){
     //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
     //we want to only transpile the program into its C++ form
     if(strcmp(argv[1], "compile") is 0){
+
+        clock_t begin = clock();
+
         char* source = read_ascii_file(argv[2]);
         TokenList tokens;
         token_list_create(&tokens, 1);
@@ -51,6 +54,11 @@ int main(int argc, char *argv[]){
 
         token_list_destroy(&tokens);
         free(source);
+
+        clock_t end = clock();
+        double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+        printf("%s was compiled in %f\n", argv[3], time_spent);
     }
 
     return 0;
