@@ -23,9 +23,13 @@
 #define FileNotExist 8
 #define TypeError 9
 #define IllegalExpression 10
+#ifdef FileOpenError
+    #undef FileOpenError
+    #define FileOpenerror 11
+#endif
 
 //WARNINGS
-#define WhiteSpaceWarning 11
+#define WhiteSpaceWarning 12
 
 
 void error(const int error_code, char *lex);

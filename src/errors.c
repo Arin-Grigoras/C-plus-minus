@@ -44,6 +44,9 @@ void error(const int error_code, char *lex){
     elif(error_code is TypeError){
         printf("%sTypeError: %s%s\n", red(), white(), lex);
     }
+    elif(error_code is FileOpenError){
+        printf("%sFileOpenError: %s%s\n", red(), white(), lex);
+    }
     else{
         printf("Unknown error code: %d\n", error_code);
         exit(1);
