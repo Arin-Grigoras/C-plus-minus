@@ -9,6 +9,10 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
     }
 
 
+    /*for(uint32_t i = 0; i < list->ptr; i++){
+            printf("%d\n", (*list->data)->data);
+    }*/
+
     fclose(fptr);
 
     printf("Done...\n");

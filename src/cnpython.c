@@ -679,7 +679,7 @@ void printSplit(char *str, const char *del){
 
 
 
-char **split(char **array, char *str, const char *del){
+/*char **split(char **array, char *str, const char *del){
 	char *token;
     	size_t i = 0;
 
@@ -697,7 +697,7 @@ char **split(char **array, char *str, const char *del){
     	}
 
     	return array;
-}
+}*/
 
 
 

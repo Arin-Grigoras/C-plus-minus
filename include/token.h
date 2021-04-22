@@ -31,8 +31,8 @@ typedef enum _TokenOP TokenOP;
 
 
 enum _TokenTypes{
-    inte,
-    chr,
+    integer,
+    character,
     string,
     lng,
     dbl,
