@@ -10,6 +10,6 @@ enum _CompilerStatus {
 };
 typedef enum _CompilerStatus CompilerStatus;
 
-CompilerStatus compiler_start(TokenList* tokens);
+CompilerStatus compiler_start(TokenList* tokens, const char *path);
 
 #endif //COMPILER_H

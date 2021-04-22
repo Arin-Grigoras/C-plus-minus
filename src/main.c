@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
     }
 
     //HEART
-    if(argc<3){
+    if(argc<4){
         printf("Too few arguments\n");
         printf("Maybe try -h to get some help\n");
         return 1;
@@ -34,7 +34,11 @@ int main(int argc, char *argv[]){
             return 1;
         }
 
-        CompilerStatus cstat = compiler_start(&tokens);
+        /*if(not argv[3]){
+            strcpy(argv[3], "a.out");
+        }*/
+
+        CompilerStatus cstat = compiler_start(&tokens, argv[3]);
         
         if(cstat isnt COMPILER_SUCCES){
             return 1;
