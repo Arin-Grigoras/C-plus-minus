@@ -39,7 +39,7 @@ A personal project trying to be a programming language with close resemblence to
 
 
     make
-    ./cpm compile ./testing/main.cpm
+    ./cpm compile ./testing/main.cpm ./testing/main.o
 
 
   If the output is:
