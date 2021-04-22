@@ -58,5 +58,9 @@ Run ./testing/main.o to run the program
 
 you're good
 
+
+## Using the programming language
+ If you want to use the "language" when it's ready you can by getting the vscode extension for syntax highlighting and more.
+
 ## Technologies
  For now it is being built with C.
