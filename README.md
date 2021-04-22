@@ -56,7 +56,7 @@ Done...
 
 Run ./testing/main.o to run the program
 
-
+you're good
 
 ## Technologies
  For now it is being built with C.
