@@ -76,5 +76,3 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
 
     return COMPILER_SUCCES;
 }
-
-
