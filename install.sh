@@ -1,3 +1,3 @@
 make
 cp ./cpm /usr/local/bin
-cpm ./testing/main.cpm
+cpm compile ./testing/main.cpm ./testing/main.o
