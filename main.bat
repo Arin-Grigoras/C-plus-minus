@@ -1,6 +1,3 @@
-@ECHO off
-
-TITLE The C+- Console
 
 echo ░█████╗░░░░░░░░░░░░░░
 echo ██╔══██╗░░██╗░░░░░░░░
