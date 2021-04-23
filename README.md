@@ -4,8 +4,7 @@
 
 A personal project trying to be a programming language with close resemblence to C/C++ (probably gonna fail at that).
 
-## Side note
-    Ima learn more about programming then gonna start working on this project again.
+
 
 ## What I want the programming language to  be
  I want it to be:
