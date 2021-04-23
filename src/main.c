@@ -43,7 +43,7 @@ int main(int argc, char *argv[]){
 
         CompilerStatus cstat = compiler_start(&tokens, argv[3]);
         
-        if(cstat != COMPILER_SUCCES){
+        if(cstat != COMPILER_SUCCESS){
             return 1;
         }
 

@@ -5,7 +5,7 @@
 #include "./token.h"
 
 enum _CompilerStatus {
-    COMPILER_SUCCES,
+    COMPILER_SUCCESS,
     COMPILER_FAILURE,
 };
 typedef enum _CompilerStatus CompilerStatus;

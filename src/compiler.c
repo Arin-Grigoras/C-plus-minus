@@ -109,5 +109,5 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
     printf("\nRun %s to run the program\n", path);
 
 
-    return COMPILER_SUCCES;
+    return COMPILER_SUCCESS;
 }
