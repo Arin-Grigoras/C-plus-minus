@@ -43,7 +43,7 @@ void get_instruction(const int inst_code, const int type, FILE *fptr){
     int number = check_num(inst_code, type);
 
     if(number != -1){
-        fprintf(fptr, " %d", number);
+        fprintf(fptr, " %d\n", number);
     }
     
     srand(time(NULL));
@@ -52,7 +52,7 @@ void get_instruction(const int inst_code, const int type, FILE *fptr){
 
     
     if(check_push(inst_code, type) == push){
-        fprintf(fptr, "\tmov %s, \n", registers[random]);
+        fprintf(fptr, "\tmov %s,", registers[random]);
     }
     else if(check_add(inst_code, type) == add){
         fprintf(fptr, "\tadd %s, %s\n", registers[0], registers[1]);
