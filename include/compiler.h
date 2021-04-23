@@ -11,11 +11,11 @@ enum _CompilerStatus {
 typedef enum _CompilerStatus CompilerStatus;
 
 
-char* check_instruction(const int inst_code, const int type, const int line);
-int check_push(const int inst_code, const int type, const int line);
-int check_add(const int inst_code, const int type, const int line);
-int check_ext(const int inst_code, const int type, const int line);
-int check_num(const int inst_code, const int type, const int line);
+void check_instruction(const int inst_code, const int type);
+int check_push(const int inst_code, const int type1);
+int check_add(const int inst_code, const int type);
+int check_ext(const int inst_code, const int type);
+int check_num(const int inst_code, const int type);
 CompilerStatus compiler_start(TokenList *list, const char *path);
 
 
