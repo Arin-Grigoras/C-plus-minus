@@ -40,7 +40,7 @@ int check_num(const int inst_code, const int type){
 
 void get_instruction(const int inst_code, const int type, FILE *fptr){
     char *registers[] = {"eax", "ebx"};
-    uint32_t number = check_num(inst_code, type);
+    int number = check_num(inst_code, type);
 
     if(number != -1){
         fprintf(fptr, " %d", number);
@@ -60,39 +60,9 @@ void get_instruction(const int inst_code, const int type, FILE *fptr){
     else if(check_ext(inst_code, type) == ext){
         fprintf(fptr, "\tmov eax, 1\n\tint 0x80\n");
     }
-
-    
-
-    fclose(fptr);
-
-
     //fprintf(fptr, "");
 }
 
-
-
-FILE *create_file(){
-    FILE *fptr;
-    
-    fptr = fopen("./a.asm", "a+");
-
-    if(!fptr){
-        perror("FileOpenError");
-        exit(1);
-       //return FileOpenError;
-    }
-
-    //Intel syntax btw
-
-    fprintf(fptr, "global _start");
-
-    //fprintf(fptr, "SECTION .text");
-
-
-    fprintf(fptr, "\n\n_start:\n");
-
-    return fptr;
-}
 
 
 
@@ -104,7 +74,24 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
         return FileOpenError;
     }
 
-    FILE *file = create_file();
+    FILE *file;
+    
+    file = fopen("./a.asm", "a+");
+
+    if(!file){
+        perror("FileOpenError");
+        exit(1);
+       //return FileOpenError;
+    }
+
+    //Intel syntax btw
+
+    fprintf(file, "global _start");
+
+    //fprintf(fptr, "SECTION .text");
+
+
+    fprintf(file, "\n\n_start:\n");
 
 
     for(uint32_t i = 0; i < list->ptr; i++){
@@ -114,6 +101,9 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
     }
 
     fclose(fptr);
+    fclose(file);
+
+    read_ascii_file("./a.asm");
 
     printf("\n\nDone...\n\n");
     printf("\nRun %s to run the program\n", path);

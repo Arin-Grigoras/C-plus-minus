@@ -16,7 +16,7 @@ int check_push(const int inst_code, const int type1);
 int check_add(const int inst_code, const int type);
 int check_ext(const int inst_code, const int type);
 int check_num(const int inst_code, const int type);
-FILE *create_file();
+//FILE *create_file();
 CompilerStatus compiler_start(TokenList *list, const char *path);
 
 
