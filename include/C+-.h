@@ -12,6 +12,7 @@
 #include <string.h>
 #include <limits.h>
 #include <time.h>
+#include <errno.h>
 
 #ifndef UINT32_MAX
     #error "C+-.h Requires UINT32_MAX to be defined"

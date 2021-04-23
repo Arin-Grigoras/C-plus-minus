@@ -70,7 +70,7 @@ ParserStatus parser_start(TokenList* list, const char* source){
 
     }
 
-    return PARSER_SUCCES;
+    return PARSER_SUCCESS;
 
 }
 
@@ -84,8 +84,8 @@ uint32_t parser_get_number(const char* buf, const int line){
         return num;
     }
 
-    error(OverFlowError, NULL, line);
-    return OverFlowError;
+    perror("OverFlow error");
+    return 0;
 }
 
 

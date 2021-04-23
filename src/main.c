@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
         TokenList tokens;
         token_list_create(&tokens, 1);
         ParserStatus pstat = parser_start(&tokens, source);
-        if(pstat != PARSER_SUCCES){
+        if(pstat != PARSER_SUCCESS){
             return 1;
         }
 

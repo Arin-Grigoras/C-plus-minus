@@ -45,7 +45,7 @@ void get_instruction(const int inst_code, const int type){
     fptr = fopen("./a.asm", "w+");
 
     if(!fptr){
-        printf("Couldn't create assembly file");
+        perror("FileOpenError");
         exit(1);
        //return FileOpenError;
     }
@@ -92,7 +92,7 @@ CompilerStatus compiler_start(TokenList *list, const char *path){
     FILE *fptr = fopen(path, "wb");
 
     if(!fptr){
-        printf("\nFileOpenError: 'a.out'\n");
+        perror("FileOpenError");
         return FileOpenError;
     }
 

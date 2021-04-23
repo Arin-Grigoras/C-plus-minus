@@ -6,7 +6,7 @@
 
 
 enum _ParserStatus {
-    PARSER_SUCCES,
+    PARSER_SUCCESS,
     PARSER_SYNTAX_ERROR
 };
 typedef enum _ParserStatus ParserStatus;
