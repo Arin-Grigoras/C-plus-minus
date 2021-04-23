@@ -30,19 +30,51 @@ int check_ext(const int inst_code, const int type){
 
 
 int check_num(const int inst_code, const int type){
-    if(type == 4){
-        return NUMBER;
+    if(type == NUMBER){
+        return inst_code;
     }
     return -1;
 }
 
 
 
-void get_instruction(const int inst_code, const int type){
+void get_instruction(const int inst_code, const int type, FILE *fptr){
     char *registers[] = {"eax", "ebx"};
+    uint32_t number = check_num(inst_code, type);
+
+    if(number != -1){
+        fprintf(fptr, " %d", number);
+    }
+    
+    srand(time(NULL));
+    int random = rand() % 2;
+
+
+    
+    if(check_push(inst_code, type) == push){
+        fprintf(fptr, "\tmov %s, \n", registers[random]);
+    }
+    else if(check_add(inst_code, type) == add){
+        fprintf(fptr, "\tadd %s, %s\n", registers[0], registers[1]);
+    }
+    else if(check_ext(inst_code, type) == ext){
+        fprintf(fptr, "\tmov eax, 1\n\tint 0x80\n");
+    }
+
+    
+
+    fclose(fptr);
+
+
+    //fprintf(fptr, "");
+}
+
+
+
+FILE *create_file(){
     FILE *fptr;
     
-    fptr = fopen("./a.asm", "w+");
+    fptr = fopen("./a.asm", "a+");
 
     if(!fptr){
         perror("FileOpenError");
@@ -59,47 +91,25 @@ void get_instruction(const int inst_code, const int type){
 
     fprintf(fptr, "\n\n_start:\n");
 
-    
-    srand(time(NULL));
-    int random = rand() % 2;
-
-
-    if(check_push(inst_code, type) == push){
-        fprintf(fptr, "\tmov %s, %d\n", registers[random], inst_code);
-    }
-    else if(check_add(inst_code, type) == add){
-        fprintf(fptr, "\tadd %s, %s\n", registers[random], registers[random]);
-    }
-    else if(check_ext(inst_code, type) == ext){
-        fprintf(fptr, "\tmov eax, 1\n\tint 0x80\n");
-    }
-
-    else if(check_num(inst_code, type) == NUMBER){
-    }
-
-    fclose(fptr);
-
-
-    //fprintf(fptr, "");
-
-    
-
+    return fptr;
 }
 
 
 
 CompilerStatus compiler_start(TokenList *list, const char *path){
     FILE *fptr = fopen(path, "wb");
-
+    
     if(!fptr){
         perror("FileOpenError");
         return FileOpenError;
     }
 
+    FILE *file = create_file();
+
+
     for(uint32_t i = 0; i < list->ptr; i++){
             Token* t = token_list_get(*&list, i);
-            
-            get_instruction(t->data, t->type);
+            get_instruction(t->data, t->type, file);
             
     }
 

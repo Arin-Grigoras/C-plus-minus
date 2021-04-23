@@ -23,8 +23,6 @@ int main(int argc, char *argv[]){
         return 1;
     }
 
-    //'is' is a keyword in the cnpython library. check ../include/cnpython.h for more details
-    //we want to only transpile the program into its C++ form
     if(strcmp(argv[1], "compile") == 0){
 
         clock_t begin = clock();
