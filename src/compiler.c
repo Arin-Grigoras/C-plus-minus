@@ -57,7 +57,7 @@ void get_instruction(const int inst_code, const int type){
     //fprintf(fptr, "SECTION .text");
 
 
-    fprintf(fptr, "\n\n_start:\n\t");
+    fprintf(fptr, "\n\n_start:\n");
 
     
     srand(time(NULL));
@@ -71,7 +71,7 @@ void get_instruction(const int inst_code, const int type){
         fprintf(fptr, "\tadd %s, %s\n", registers[random], registers[random]);
     }
     else if(check_ext(inst_code, type) == ext){
-        fprintf(fptr, "\tmov eax, 1\nint 0x80\n");
+        fprintf(fptr, "\tmov eax, 1\n\tint 0x80\n");
     }
 
     else if(check_num(inst_code, type) == NUMBER){
