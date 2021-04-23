@@ -1,5 +1,7 @@
 #include "../include/C+-.h"
 
+
+
 int check_push(const int inst_code, const int type, const int line){
     if(inst_code == push && type == 0){
         return push;
@@ -7,12 +9,15 @@ int check_push(const int inst_code, const int type, const int line){
     return -1;
 }
 
+
+
 int check_add(const int inst_code, const int type, const int line){
     if(inst_code == add && type == 0){
         return add;
     }
     return -1;
 }
+
 
 
 int check_ext(const int inst_code, const int type, const int line){
@@ -23,12 +28,14 @@ int check_ext(const int inst_code, const int type, const int line){
 }
 
 
+
 int check_num(const int inst_code, const int type, const int line){
     if(type == 4){
         return NUMBER;
     }
     return -1;
 }
+
 
 
 char* get_instruction(const int inst_code, const int type, const int line){
@@ -51,6 +58,8 @@ char* get_instruction(const int inst_code, const int type, const int line){
     }
 
 }
+
+
 
 CompilerStatus compiler_start(TokenList *list, const char *path){
     FILE *fptr = fopen(path, "wb");
