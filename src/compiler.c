@@ -39,28 +39,23 @@ int check_num(const int inst_code, const int type){
 
 
 void get_instruction(const int inst_code, const int type, FILE *fptr){
-    char *registers[] = {"eax", "ebx", "edx", "ecx"};
+    char *registers[] = {"eax", "ebx"};
     int number = check_num(inst_code, type);
 
     if(number != -1){
         fprintf(fptr, " %d\n", number);
     }
+
     
-    srand(time(NULL));
-    int random = rand() % 2;
-
-
     
     if(check_push(inst_code, type) == push){
-        fprintf(fptr, "\tmov %s,", registers[random]);
+        srand(time(NULL));
+        fprintf(fptr, "\tmov %s,", registers[rand() % 2]);
     }
     else if(check_add(inst_code, type) == add){
-        fprintf(fptr, "\tadd %s, %s\n", registers[2], registers[3]);
+        fprintf(fptr, "\tadd %s, %s\n", registers[0], registers[1]);
         
         //basically to print the result
-        fprintf(fptr, "\tmov %s, 1\n", registers[1]);
-        fprintf(fptr, "\tmov %s, 4\n", registers[0]);
-        fprintf(fptr, "\tint 0x80\n");
     }
     else if(check_ext(inst_code, type) == ext){
         fprintf(fptr, "\tmov eax, 1\n\tint 0x80\n");
