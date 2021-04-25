@@ -34,5 +34,7 @@
 #define AND 30
 #define NOT 31
 #define ISNT 32
+#define TRUE 33
+#define FALSE 34
 
 #endif //KEYWORDS_H
