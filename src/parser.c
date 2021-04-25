@@ -91,13 +91,13 @@ uint32_t parser_get_number(const char* buf, const int line){
 
 TokenInst parser_get_inst(const char* buf){
     if(strcmp(buf, "push") == 0){
-        return push;
+        return PUSH;
     }
     if(strcmp(buf, "add") == 0){
-        return add;
+        return ADD;
     }
     if(strcmp(buf, "ext") == 0){
-        return ext;
+        return EXT;
     }
     else{
         return (TokenInst)-1;

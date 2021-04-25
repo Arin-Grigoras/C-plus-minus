@@ -12,9 +12,18 @@ enum _TokenType{
 };
 
 enum _TokenInst{
-    push,
-    add,
-    ext
+    PUSH,
+    ADD,
+    EXT,
+    RETURN,
+    IF,
+    ELIF,
+    WHILE,
+    FOR,
+    STRUCT,
+    INCLUDE,
+    DEFINE
+    
 };
 
 typedef enum _TokenInst TokenInst;

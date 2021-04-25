@@ -3,8 +3,8 @@
 
 
 int check_push(const int inst_code, const int type){
-    if(inst_code == push && type == 0){
-        return push;
+    if(inst_code == PUSH && type == 0){
+        return PUSH;
     }
     return -1;
 }
@@ -12,8 +12,8 @@ int check_push(const int inst_code, const int type){
 
 
 int check_add(const int inst_code, const int type){
-    if(inst_code == add && type == 0){
-        return add;
+    if(inst_code == ADD && type == 0){
+        return ADD;
     }
     return -1;
 }
@@ -21,8 +21,8 @@ int check_add(const int inst_code, const int type){
 
 
 int check_ext(const int inst_code, const int type){
-    if(inst_code == ext && type == 0){
-        return ext;
+    if(inst_code == EXT && type == 0){
+        return EXT;
     }
     return -1;
 }
@@ -48,16 +48,16 @@ void get_instruction(const int inst_code, const int type, FILE *fptr){
 
     
     
-    if(check_push(inst_code, type) == push){
+    if(check_push(inst_code, type) == PUSH){
         srand(time(NULL));
         fprintf(fptr, "\tmov %s,", registers[rand() % 2]);
     }
-    else if(check_add(inst_code, type) == add){
+    else if(check_add(inst_code, type) == ADD){
         fprintf(fptr, "\tadd %s, %s\n", registers[0], registers[1]);
         
         //basically to print the result
     }
-    else if(check_ext(inst_code, type) == ext){
+    else if(check_ext(inst_code, type) == EXT){
         fprintf(fptr, "\tmov eax, 1\n\tint 0x80\n");
     }
     //fprintf(fptr, "");
