@@ -25,8 +25,6 @@
 #include "./util.h"
 #include "./compiler.h"
 #include "./colors.h"
-
-#define true 1
-#define false 0
+#include "./keywords.h"
 
 #endif //C+-_h

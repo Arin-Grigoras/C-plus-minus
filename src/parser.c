@@ -29,7 +29,7 @@ ParserStatus parser_start(TokenList* list, const char* source){
             //then do some operator stuff(i literally have no idea what im doing please help)
             int op = parser_get_op(lex);
             //printf("%d\n", op);
-            token_list_add(list, token_create(OP, op, line));
+            token_list_add(list, token_create(INST, op, line));
         }
 
         else if(lex[0] == '@'){

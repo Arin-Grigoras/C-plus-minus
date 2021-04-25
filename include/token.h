@@ -5,7 +5,6 @@
 
 enum _TokenType{
     INST,
-    OP,
     TYPE,
     COMMENT,
     NUMBER
@@ -22,8 +21,29 @@ enum _TokenInst{
     FOR,
     STRUCT,
     INCLUDE,
-    DEFINE
-    
+    DEFINE,
+    BREAK,
+    CONST,
+    CONTINUE,
+    TYPEDEF,
+    VOID,
+    INT,
+    FLOAT,
+    LONG,
+    CHAR,
+    STRING,
+    DOUBLE,
+    SHORT,
+    BOOL,
+    TRUE,
+    FALSE,
+    SIGNED,
+    UNSIGNED,
+    DEFAULT,
+    OR,
+    AND,
+    NOT,
+    ISNT,
 };
 
 typedef enum _TokenInst TokenInst;
@@ -36,16 +56,6 @@ enum _TokenOP{
     modulus,
 };
 typedef enum _TokenOP TokenOP;
-
-
-enum _TokenTypes{
-    integer,
-    character,
-    string,
-    lng,
-    dbl,
-    flt,
-};
 
 typedef enum _TokenTypes TokenTypes;
 
